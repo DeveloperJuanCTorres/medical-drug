@@ -1,4 +1,4 @@
-<header class="sticky-header">
+<header class="sticky-header d-none d-xl-block">
     <!-- Top Bar -->
     <div class="top-bar d-none d-lg-block py-2">
         <div class="container-xxl d-flex justify-content-between align-items-center">
@@ -26,7 +26,7 @@
                 <h5>Medical Drug</h5>
                 <!-- <img alt="FarmaLux" height="40" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCra1tp5egq0T9RK-YleWzdfV80uio_WShUnCDnY54vaQwDbgwXcqZYualDSutOl8zISLpiqDL6sY6UeQTuqw-sbqlrotb8btU61j4i5_RziXXUum6Hzm-gkHsPUseHF2Yw4nhBlRNppu_-zUO5U7I_A51NOBRq3g1js6JhznB5VsFEvkCPn1I5mlSelYXUyrJj0Z49_0x-MDh2DGxxrSs0V8STi3dtNrc6lrTGDqxRYqtasNjC5PYg0A" /> -->
             </a>
-            
+
             <div class="mega-menu-wrapper d-none d-lg-block">
 
                 <button class="btn btn-primary category-btn">
@@ -186,8 +186,362 @@
     </nav>
 </header>
 
+<header class="mobile-header d-xl-none">
+
+    <div class="container-fluid px-3">
+
+        <div class="mobile-header-top">
+
+            <!-- Botón menú -->
+
+            <button class="mobile-icon"
+                data-bs-toggle="offcanvas"
+                data-bs-target="#mobileMenu">
+
+                <i class="fa-solid fa-bars"></i>
+
+            </button>
+
+            <!-- Logo -->
+
+            <a href="/" class="mobile-logo">
+
+                <h5 class="mb-0 fw-bold">
+                    Medical Drug
+                </h5>
+
+            </a>
+
+            <!-- Carrito -->
+
+            <a href="#"
+                class="mobile-cart"
+                data-bs-toggle="offcanvas"
+                data-bs-target="#cartOffcanvas">
+
+                <i class="fa-solid fa-basket-shopping"></i>
+
+                <span class="cart-badge">
+
+                    3
+
+                </span>
+
+            </a>
+
+        </div>
+
+        <!-- Buscador -->
+
+        <!-- <div class="mobile-search">
+
+            <div class="search-container w-100">
+
+                <input
+                    type="text"
+                    class="search-input"
+                    placeholder="Buscar medicamentos...">
+
+                <i class="fa-solid fa-magnifying-glass search-icon"></i>
+
+            </div>
+
+        </div> -->
+
+    </div>
+
+</header>
+
+
+<!-- ===========================
+     MOBILE MENU OFFCANVAS
+=========================== -->
+<div class="offcanvas offcanvas-start mobile-menu-offcanvas"
+    tabindex="-1"
+    id="mobileMenu">
+
+    <!-- Header -->
+
+    <div class="offcanvas-header border-bottom">
+
+        <div>
+
+            <h5 class="mb-1 fw-bold">
+                Medical Drug
+            </h5>
+
+            <small class="text-muted">
+                Bienvenido
+            </small>
+
+        </div>
+
+        <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="offcanvas">
+        </button>
+
+    </div>
+
+    <!-- Body -->
+
+    <div class="offcanvas-body p-0 d-flex flex-column h-100">
+
+        <!-- HERO -->
+
+        <div class="mobile-menu-hero">
+
+            <div class="hero-avatar">
+
+                <i class="fa-regular fa-user"></i>
+
+            </div>
+
+            <h5 class="mb-1 mt-3">
+                Bienvenido
+            </h5>
+
+            <p class="mb-0">
+                Compra medicamentos de forma rápida y segura.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="#" class="btn btn-primary">
+                    Iniciar Sesión
+                </a>
+
+                <a href="#" class="btn btn-light">
+                    Registrarse
+                </a>
+
+            </div>
+
+        </div>
+
+        <!-- MENU -->
+
+        <div class="mobile-menu-section">
+
+            <div class="menu-title">
+
+                NAVEGACIÓN
+
+            </div>
+
+            <a href="/" class="menu-link active">
+
+                <div>
+
+                    <div class="menu-icon">
+
+                        <i class="fa-solid fa-house"></i>
+
+                    </div>
+
+                    Inicio
+
+                </div>
+
+            </a>
+
+            <a href="{{ route('tienda') }}" class="menu-link">
+
+                <div>
+
+                    <div class="menu-icon">
+
+                        <i class="fa-solid fa-store"></i>
+
+                    </div>
+
+                    Tienda
+
+                </div>
+
+            </a>
+
+            <button
+                class="menu-link border-0 bg-transparent w-100"
+                data-bs-toggle="collapse"
+                data-bs-target="#mobileCategories">
+
+                <div>
+
+                    <div class="menu-icon">
+
+                        <i class="fa-solid fa-bars"></i>
+
+                    </div>
+
+                    Categorías
+
+                </div>
+
+                <i class="fa-solid fa-chevron-down"></i>
+
+            </button>
+
+            <div class="collapse" id="mobileCategories">
+
+                <div class="submenu-mobile">
+
+                    <a href="#">💊 Medicamentos</a>
+
+                    <a href="#">🧴 Dermocosmética</a>
+
+                    <a href="#">👶 Bebés</a>
+
+                    <a href="#">💪 Vitaminas</a>
+
+                    <a href="#">❤️ Salud Sexual</a>
+
+                    <a href="#">🩺 Equipos Médicos</a>
+
+                </div>
+
+            </div>
+
+            <a href="{{ route('about') }}" class="menu-link">
+
+                <div>
+
+                    <div class="menu-icon">
+
+                        <i class="fa-solid fa-building"></i>
+
+                    </div>
+
+                    Nosotros
+
+                </div>
+
+            </a>
+
+            <a href="#" class="menu-link">
+
+                <div>
+
+                    <div class="menu-icon">
+
+                        <i class="fa-regular fa-user"></i>
+
+                    </div>
+
+                    Mi Perfil
+
+                </div>
+
+            </a>
+
+            <a href="#"
+                class="menu-link"
+                data-bs-toggle="offcanvas"
+                data-bs-target="#cartOffcanvas">
+
+                <div>
+
+                    <div class="menu-icon">
+
+                        <i class="fa-solid fa-basket-shopping"></i>
+
+                    </div>
+
+                    Mi Carrito
+
+                </div>
+
+                <span class="badge bg-primary rounded-pill">
+
+                    3
+
+                </span>
+
+            </a>
+
+        </div>
+
+        <!-- INFORMACIÓN -->
+
+        <div class="mobile-menu-section">
+
+            <div class="menu-title">
+
+                AYUDA
+
+            </div>
+
+            <a href="#" class="menu-link">
+
+                <div>
+
+                    <div class="menu-icon">
+
+                        <i class="fa-brands fa-whatsapp"></i>
+
+                    </div>
+
+                    WhatsApp
+
+                </div>
+
+            </a>
+
+            <a href="#" class="menu-link">
+
+                <div>
+
+                    <div class="menu-icon">
+
+                        <i class="fa-solid fa-phone"></i>
+
+                    </div>
+
+                    Teléfono
+
+                </div>
+
+            </a>
+
+            <a href="#" class="menu-link">
+
+                <div>
+
+                    <div class="menu-icon">
+
+                        <i class="fa-solid fa-envelope"></i>
+
+                    </div>
+
+                    Correo
+
+                </div>
+
+            </a>
+
+        </div>
+
+        <div class="mt-auto p-4 text-center text-muted">
+
+            Medical Drug
+
+            <br>
+
+            <small>
+
+                © 2026 Todos los derechos reservados.
+
+            </small>
+
+        </div>
+
+    </div>
+
+</div>
+
 <!-- Mobile Navigation -->
-<nav class="mobile-nav d-lg-none">
+<!-- <nav class="mobile-nav d-lg-none">
     <a class="nav-action-btn text-primary" href="#">
         <i class="fa-solid fa-house"></i>
         <span>Inicio</span>
@@ -209,4 +563,4 @@
         <i class="fa-regular fa-user"></i>
         <span>Perfil</span>
     </a>
-</nav>
+</nav> -->

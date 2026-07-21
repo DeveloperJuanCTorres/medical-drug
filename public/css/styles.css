@@ -1165,3 +1165,427 @@ h4,
         transform: translateY(-2px);
     }
     /* END NOSOTROS */
+
+
+    /* NAVBAR MOBILE */
+    /*======================================================
+ MOBILE HEADER
+======================================================*/
+
+.mobile-header{
+
+    position:sticky;
+
+    top:0;
+
+    z-index:1050;
+
+    background:#fff;
+
+    box-shadow:0 5px 25px rgba(0,0,0,.08);
+
+    padding:12px 0;
+
+}
+
+.mobile-header-top{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+}
+
+.mobile-logo{
+
+    text-decoration:none;
+
+    color:#222;
+
+}
+
+.mobile-icon{
+
+    width:46px;
+
+    height:46px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:#F4F7FA;
+
+    font-size:20px;
+
+}
+
+.mobile-cart{
+
+    width:46px;
+
+    height:46px;
+
+    border-radius:12px;
+
+    background:#F4F7FA;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    position:relative;
+
+    text-decoration:none;
+
+    color:#0A7C86;
+
+    font-size:20px;
+
+}
+
+.cart-badge{
+
+    position:absolute;
+
+    top:-4px;
+
+    right:-4px;
+
+    background:#FF4D4F;
+
+    color:#fff;
+
+    width:20px;
+
+    height:20px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    font-size:11px;
+
+}
+
+.mobile-search{
+
+    margin-top:15px;
+
+}
+
+/*=========================================
+OFFCANVAS
+=========================================*/
+
+.mobile-menu-offcanvas{
+
+    width:330px;
+
+    border-radius:0 25px 25px 0;
+
+}
+
+.mobile-user{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    padding:25px;
+
+    border-bottom:1px solid #eee;
+
+}
+
+.user-icon{
+
+    width:60px;
+
+    height:60px;
+
+    border-radius:50%;
+
+    background:#EEF8F8;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    font-size:24px;
+
+    color:#0A7C86;
+
+}
+
+.mobile-menu-list{
+
+    padding:15px;
+
+}
+
+.menu-link{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    text-decoration:none;
+
+    color:#333;
+
+    padding:15px;
+
+    border-radius:14px;
+
+    transition:.25s;
+
+    margin-bottom:4px;
+
+}
+
+.menu-link div{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:14px;
+
+}
+
+.menu-link:hover{
+
+    background:#EEF8F8;
+
+    color:#0A7C86;
+
+}
+
+.submenu-mobile{
+
+    padding-left:22px;
+
+    margin-bottom:10px;
+
+}
+
+.submenu-mobile a{
+
+    display:block;
+
+    text-decoration:none;
+
+    color:#666;
+
+    padding:10px 15px;
+
+}
+
+.submenu-mobile a:hover{
+
+    color:#0A7C86;
+
+}
+
+.mobile-contact{
+
+    border-top:1px solid #eee;
+
+    padding:25px;
+
+}
+
+.mobile-contact h6{
+
+    margin-bottom:15px;
+
+}
+
+.mobile-contact a{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    padding:10px 0;
+
+    color:#666;
+
+    text-decoration:none;
+
+}
+
+/*=============================
+ HERO
+=============================*/
+
+.mobile-menu-hero{
+
+    padding:35px 25px;
+
+    background:linear-gradient(135deg,#0A7C86,#10B981);
+
+    color:#fff;
+
+    text-align:center;
+
+}
+
+.hero-avatar{
+
+    width:90px;
+
+    height:90px;
+
+    margin:auto;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.15);
+
+    backdrop-filter:blur(10px);
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    font-size:36px;
+
+}
+
+.mobile-menu-hero p{
+
+    opacity:.9;
+
+}
+
+.hero-buttons{
+
+    display:flex;
+
+    gap:10px;
+
+    margin-top:20px;
+
+}
+
+.hero-buttons .btn{
+
+    flex:1;
+
+    border-radius:12px;
+
+}
+
+/*=============================
+ SECTION
+=============================*/
+
+.mobile-menu-section{
+
+    padding:20px;
+
+}
+
+.menu-title{
+
+    font-size:12px;
+
+    font-weight:700;
+
+    letter-spacing:2px;
+
+    color:#999;
+
+    margin-bottom:15px;
+
+}
+
+/*=============================
+ ICONOS
+=============================*/
+
+.menu-icon{
+
+    width:42px;
+
+    height:42px;
+
+    border-radius:12px;
+
+    background:#EEF8F8;
+
+    color:#0A7C86;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    font-size:17px;
+
+}
+
+.menu-link{
+
+    padding:12px;
+
+}
+
+.menu-link.active{
+
+    background:#EEF8F8;
+
+    color:#0A7C86;
+
+}
+
+.menu-link:hover{
+
+    transform:translateX(6px);
+
+}
+
+.submenu-mobile{
+
+    margin-left:55px;
+
+}
+
+.submenu-mobile a{
+
+    padding:10px;
+
+    border-left:2px solid #E5E7EB;
+
+}
+
+.submenu-mobile a:hover{
+
+    border-color:#0A7C86;
+
+    color:#0A7C86;
+
+}
+
+/* END NAVBAR MOBILE */
