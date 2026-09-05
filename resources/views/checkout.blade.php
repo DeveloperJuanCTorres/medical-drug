@@ -3,230 +3,274 @@
 @section('content')
 
 <div class="container py-5">
-    <div class="row">
-        <!-- Left Side: Forms -->
+    <div class="row g-4">
+        <!-- Left Column -->
         <div class="col-lg-8">
-            <!-- Section 1: Datos Personales (New) -->
+            <!-- Step 1: Personal Data -->
             <section class="checkout-card">
-                <div class="d-flex align-items-center mb-4">
+                <div class="card-header-custom">
                     <div class="icon-box">
                         <i class="fa-solid fa-user"></i>
                     </div>
-                    <h2 class="h5 mb-0 font-manrope">Datos del Cliente</h2>
+                    <div>
+                        <h2 class="h5 mb-0 fw-bold">1. Personal Information</h2>
+                        <p class="small text-muted mb-0">Identification for prescription verification</p>
+                    </div>
                 </div>
-                <div class="row g-3">
-                    <div class="col-md-6">
-                        <label class="form-label small text-muted">Nombre Completo</label>
-                        <input class="form-control" placeholder="Ej. Juan Pérez" type="text" />
-                    </div>
-                    <div class="col-md-6">
-                        <label class="form-label small text-muted">DNI / CE</label>
-                        <input class="form-control" placeholder="Número de documento" type="text" />
-                    </div>
-                    <div class="col-md-6">
-                        <label class="form-label small text-muted">Correo Electrónico</label>
-                        <input class="form-control" placeholder="correo@ejemplo.com" type="email" />
-                    </div>
-                    <div class="col-md-6">
-                        <label class="form-label small text-muted">Celular</label>
-                        <input class="form-control" placeholder="999 999 999" type="tel" />
+                <div class="p-4 p-md-5">
+                    <div class="row g-4">
+                        <div class="col-md-6">
+                            <label class="form-label small fw-semibold text-muted">DNI / Identity Document</label>
+                            <input class="form-control form-control-lg" placeholder="8-digit document number" type="text" />
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label small fw-semibold text-muted">Phone Number</label>
+                            <input class="form-control form-control-lg" placeholder="+51 000 000 000" type="tel" />
+                        </div>
+                        <div class="col-12">
+                            <label class="form-label small fw-semibold text-muted">Email Address</label>
+                            <input class="form-control form-control-lg" placeholder="example@medicaldrug.com" type="email" />
+                        </div>
                     </div>
                 </div>
             </section>
-            <!-- Section 2: Dirección de Entrega -->
+            <!-- Step 2: Delivery Address -->
             <section class="checkout-card">
-                <div class="d-flex align-items-center mb-4">
+                <div class="card-header-custom">
                     <div class="icon-box">
                         <i class="fa-solid fa-location-dot"></i>
                     </div>
-                    <h2 class="h5 mb-0 font-manrope">Dirección de Entrega</h2>
+                    <div>
+                        <h2 class="h5 mb-0 fw-bold">2. Delivery Address</h2>
+                        <p class="small text-muted mb-0">Where should we send your medication?</p>
+                    </div>
                 </div>
-                <div class="row g-3">
-                    <div class="col-md-7">
-                        <div class="mb-3">
-                            <label class="form-label small text-muted">Dirección Completa</label>
-                            <input class="form-control" placeholder="Ej. Av. Javier Prado Este 123" type="text" />
+                <div class="p-4 p-md-5">
+                    <div class="row g-3 mb-4">
+                        <div class="col-md-4">
+                            <label class="form-label small fw-semibold text-muted">Department</label>
+                            <select class="form-select form-select-lg">
+                                <option>Lima</option>
+                                <option>Arequipa</option>
+                                <option>Cusco</option>
+                            </select>
                         </div>
-                        <div class="row g-2 mb-3">
-                            <div class="col-6">
-                                <label class="form-label small text-muted">Dpto / Interior</label>
-                                <input class="form-control" placeholder="Apt 201" type="text" />
-                            </div>
-                            <div class="col-6">
-                                <label class="form-label small text-muted">Distrito</label>
-                                <select class="form-select">
-                                    <option selected="">San Isidro</option>
-                                    <option>Miraflores</option>
-                                    <option>Surco</option>
-                                </select>
-                            </div>
+                        <div class="col-md-4">
+                            <label class="form-label small fw-semibold text-muted">Province</label>
+                            <select class="form-select form-select-lg">
+                                <option>Lima</option>
+                                <option>Callao</option>
+                            </select>
                         </div>
-                        <div class="mb-0">
-                            <label class="form-label small text-muted">Referencias</label>
-                            <textarea class="form-control" placeholder="Frente al parque o color de casa..." rows="2"></textarea>
+                        <div class="col-md-4">
+                            <label class="form-label small fw-semibold text-muted">District</label>
+                            <select class="form-select form-select-lg">
+                                <option>Miraflores</option>
+                                <option>San Isidro</option>
+                                <option>Santiago de Surco</option>
+                            </select>
                         </div>
                     </div>
-                    <div class="col-md-5">
-                        <div class="position-relative rounded-3 overflow-hidden h-100 border" style="min-height: 200px; background: #ebeeef;">
-                            <img alt="Map" class="w-100 h-100 object-fit-cover opacity-75" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBwXVSHC7JIOsUalR1NZMx2Tj_4VgOvwvASY4h4X3j922YN3IEr9dcOGZcoFPH1Juv90n-0nKmizojh9l44eBRbByfKcHkQa_67wkG6apGTzdTmbk80gJjOlSKzNCvyEUMtFmrigVXhgSJSlureesO1H-XoGu29h-NgP6dl-4KszJzq4ZKSk7oXGVhlWskbjjLVrTpgJBioTEwxsSGTP51NHbNsWVtUkyc2vBvk9NrA4h3kZmRcmPS6tQ" />
-                            <div class="position-absolute top-50 start-50 translate-middle text-primary-brand">
-                                <i class="fa-solid fa-location-dot fa-2x"></i>
-                            </div>
-                            <button class="btn btn-sm btn-light position-absolute top-0 end-0 m-2 shadow-sm">
-                                <i class="fa-solid fa-expand"></i>
-                            </button>
-                        </div>
+                    <div class="mb-4">
+                        <label class="form-label small fw-semibold text-muted">Street Address &amp; Number</label>
+                        <input class="form-control form-control-lg" placeholder="Av. Pardo 123, Apt 401" type="text" />
+                    </div>
+                    <div>
+                        <label class="form-label small fw-semibold text-muted">Reference / Special Instructions</label>
+                        <textarea class="form-control" placeholder="Next to the main hospital entrance..." rows="2"></textarea>
                     </div>
                 </div>
             </section>
-            <!-- Section 3: Método de Envío -->
+            <!-- Step 3: Delivery Method -->
             <section class="checkout-card">
-                <div class="d-flex align-items-center mb-4">
+                <div class="card-header-custom">
                     <div class="icon-box">
                         <i class="fa-solid fa-truck-fast"></i>
                     </div>
-                    <h2 class="h5 mb-0 font-manrope">Método de Envío</h2>
-                </div>
-                <div class="row g-3">
-                    <div class="col-md-6">
-                        <input checked="" class="btn-check" id="ship-express" name="shipping" type="radio" />
-                        <label class="shipping-option w-100" for="ship-express">
-                            <div class="d-flex align-items-start">
-                                <div class="me-3 mt-1">
-                                    <i class="fa-solid fa-circle-dot text-primary-brand"></i>
-                                </div>
-                                <div>
-                                    <div class="fw-bold mb-1">Envío Express (45 - 60 min)</div>
-                                    <div class="small text-muted">Recibe tus productos hoy mismo.</div>
-                                    <div class="text-primary-brand fw-bold mt-2">S/ 9.90</div>
-                                </div>
-                            </div>
-                        </label>
+                    <div>
+                        <h2 class="h5 mb-0 fw-bold">3. Shipping Method</h2>
+                        <p class="small text-muted mb-0">Choose your preferred arrival time</p>
                     </div>
-                    <div class="col-md-6">
-                        <input class="btn-check" id="ship-scheduled" name="shipping" type="radio" />
-                        <label class="shipping-option w-100" for="ship-scheduled">
-                            <div class="d-flex align-items-start">
-                                <div class="me-3 mt-1">
-                                    <i class="fa-regular fa-circle text-muted"></i>
+                </div>
+                <div class="p-4 p-md-5">
+                    <div class="row g-3">
+                        <div class="col-md-4">
+                            <input checked="" class="btn-check" id="express" name="shipping" type="radio" />
+                            <label class="shipping-option" for="express">
+                                <div class="d-flex justify-content-between mb-3">
+                                    <i class="fa-solid fa-bolt text-primary fs-3"></i>
+                                    <span class="badge bg-primary rounded-pill text-uppercase" style="font-size: 8px;">Fastest</span>
                                 </div>
-                                <div>
-                                    <div class="fw-bold mb-1">Envío Programado</div>
-                                    <div class="small text-muted">Elige el día y la hora más cómoda.</div>
-                                    <div class="text-success fw-bold mt-2">Gratis</div>
+                                <h6 class="fw-bold mb-1">Express</h6>
+                                <p class="small text-muted mb-3">Within 60 mins</p>
+                                <p class="fw-bold text-primary mb-0 mt-auto">$5.90</p>
+                            </label>
+                        </div>
+                        <div class="col-md-4">
+                            <input class="btn-check" id="scheduled" name="shipping" type="radio" />
+                            <label class="shipping-option" for="scheduled">
+                                <div class="mb-3">
+                                    <i class="fa-solid fa-calendar-day text-muted fs-3"></i>
                                 </div>
-                            </div>
-                        </label>
+                                <h6 class="fw-bold mb-1">Scheduled</h6>
+                                <p class="small text-muted mb-3">Pick a specific time</p>
+                                <p class="fw-bold text-primary mb-0 mt-auto">$3.50</p>
+                            </label>
+                        </div>
+                        <div class="col-md-4">
+                            <input class="btn-check" id="pickup" name="shipping" type="radio" />
+                            <label class="shipping-option" for="pickup">
+                                <div class="mb-3">
+                                    <i class="fa-solid fa-store text-muted fs-3"></i>
+                                </div>
+                                <h6 class="fw-bold mb-1">Pick up</h6>
+                                <p class="small text-muted mb-3">At nearest pharmacy</p>
+                                <p class="fw-bold text-success mb-0 mt-auto">FREE</p>
+                            </label>
+                        </div>
                     </div>
                 </div>
             </section>
-            <!-- Section 4: Método de Pago -->
+            <!-- Step 4: Payment Method -->
             <section class="checkout-card">
-                <div class="d-flex align-items-center mb-4">
+                <div class="card-header-custom">
                     <div class="icon-box">
                         <i class="fa-solid fa-credit-card"></i>
                     </div>
-                    <h2 class="h5 mb-0 font-manrope">Método de Pago</h2>
-                </div>
-                <button class="payment-method-btn" data-bs-target="#cardForm" data-bs-toggle="collapse" type="button">
-                    <span class="fw-bold"><i class="fa-solid fa-credit-card me-2 opacity-75"></i> Tarjeta de Crédito o Débito</span>
-                    <div class="d-flex gap-2">
-                        <img alt="Visa" height="15" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBKEs_OJw0XEa-CIH5vWawtc14c5ndA-UaRibTPEfTg9J038Zrv8zQXvxsGcsBDQBJimpyd0KDxsWot6IkL7Qa1sGjmYKaVjTNZCXAIaKjkuH9K6n_61_8o2pz4C32Syvf-78ExwAJT1080mw1x65lSCwwnpkOxov2tyQf2ZjiBJ-fDNJYVeWoC1UFDKfrxnwe0HPxJ6aar_6cNjUnamztHFWXf0XJu49ta-Zid2LpyzDcJwH_Pk-9Xsg" />
-                        <img alt="Mastercard" height="15" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD5pvc8nsJKfu2NIY-zmlIkLre_DSROygchfPZnJ-NYhm8y28PKmWGa8xoSQRb1KnAw82mEznJuvHfFybF4w4vLhxmBBzyP3kwR3AL3vZbsnLp7XO_5XfIaVM-WFSFt6YQ7zTYO7bMog5uJVDO9BQr0V633z611dPQeveGsjewdW4SWowea_rmyj0Nx0w0kZi8fUuAC6w5-n1BHuDOgCIcHpoM_1yyspXWXWho5ymP2nPOUOsKcZDvHUg" />
+                    <div>
+                        <h2 class="h5 mb-0 fw-bold">4. Payment Selection</h2>
+                        <p class="small text-muted mb-0">All transactions are clinical-grade encrypted</p>
                     </div>
-                </button>
-                <div class="collapse mb-3" id="cardForm">
-                    <div class="p-3 bg-light rounded-3 border">
-                        <div class="row g-3">
-                            <div class="col-12">
-                                <label class="form-label small">Número de Tarjeta</label>
-                                <input class="form-control" placeholder="0000 0000 0000 0000" type="text" />
-                            </div>
-                            <div class="col-6">
-                                <label class="form-label small">Expiración</label>
-                                <input class="form-control" placeholder="MM/YY" type="text" />
-                            </div>
-                            <div class="col-6">
-                                <label class="form-label small">CVV</label>
-                                <input class="form-control" placeholder="***" type="password" />
-                            </div>
+                </div>
+                <div class="p-4 p-md-5">
+                    <div class="row g-3 row-cols-2 row-cols-sm-3 row-cols-lg-5 mb-4">
+                        <div class="col">
+                            <button class="payment-btn">
+                                <img alt="Visa" class="img-fluid mb-2" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDuTesHboloUWTY2SQR8z9UWdk6xs43Z0uKbElRqxilxZpauwOPCVaTJviv4yEwB8FD9VNutEUjCdNE2BfAcFiPKTu6t955xJU_CiM6OZL7J4nNsACYXg47EdtmEU_HHVxYhh671n27v4T64h13WUDLRbvr3gBCR2rUfAqPMnupIm4QL-DfhOeblwlODktWYNrNEWOmv7lRfXp9SV-VWAeGMowd1S5CfPBhO0qCR5VUgQJ9ZURnLfv-1A" />
+                                <span class="small fw-semibold">Visa</span>
+                            </button>
+                        </div>
+                        <div class="col">
+                            <button class="payment-btn">
+                                <img alt="Mastercard" class="img-fluid mb-2" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAfvR_OtjmrI04kpXykTeJa3IWPArvic9mGJWZxwcQisFmecQk2wzUvYvXNiGD1GN0WAdvfOo6ZAmPLUO-cR8EQK75I9BPm5s-yvTJYXvTuPLQ0g1y6_xEpaWM6eNlJ3u8dD0fH2mh7YYT731FlklKD_TmRZ0MR36sWiEgZOOS8rtSEfJZGDPGq7yJMRULjZ9pCLmasRuBm1XqKgd8o_EWSHifDcO6Uvst9TT2ENKd7c9VKOdopK8Z5OA" />
+                                <span class="small fw-semibold">Mastercard</span>
+                            </button>
+                        </div>
+                        <div class="col">
+                            <button class="payment-btn">
+                                <div class="rounded-2 bg-primary d-flex align-items-center justify-content-center mb-2" style="width: 40px; height: 40px; background-color: #9333ea !important;">
+                                    <span class="text-white small fw-bold">Yape</span>
+                                </div>
+                                <span class="small fw-semibold">Yape</span>
+                            </button>
+                        </div>
+                        <div class="col">
+                            <button class="payment-btn">
+                                <div class="rounded-2 bg-info d-flex align-items-center justify-content-center mb-2" style="width: 40px; height: 40px; background-color: #06b6d4 !important;">
+                                    <span class="text-white small fw-bold">Plin</span>
+                                </div>
+                                <span class="small fw-semibold">Plin</span>
+                            </button>
+                        </div>
+                        <div class="col">
+                            <button class="payment-btn">
+                                <i class="fa-solid fa-building-columns text-muted fs-3 mb-2"></i>
+                                <span class="small fw-semibold">Bank</span>
+                            </button>
                         </div>
                     </div>
-                </div>
-                <button class="payment-method-btn" data-bs-target="#qrForm" data-bs-toggle="collapse" type="button">
-                    <span class="fw-bold"><i class="fa-solid fa-qrcode me-2 opacity-75"></i> Yape / Plin</span>
-                    <i class="fa-solid fa-chevron-down small opacity-50"></i>
-                </button>
-                <div class="collapse" id="qrForm">
-                    <div class="qr-container border">
-                        <img alt="QR" class="img-fluid rounded mb-2" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDbKLpa3iV1IyY2icU-kUinZHslsW347giobKDlavlqRQiQ3_Jq3b798-dTwhiNdKzUK0g5jkBzDq-6iJvvi6FVVEb_uAUUQML4Vb1hK6UKmV3hrrYxhUkotL8PfIhdaHA7hG4fZRWy7Dtr-NYauEQlSBS2QHL4CGfdDyeEJKco5cBFDw9OL1i0BU-Tp9A5muUR9ik6tGLVPE0jLtS7UnFZ6PQEge6RPN-hyia4UaAdQ5ke6rNiHFv3Xw" style="max-width: 150px;" />
-                        <p class="small text-muted mb-0">Escanea el código para pagar al instante.</p>
-                    </div>
+                    
                 </div>
             </section>
         </div>
-        <!-- Right Side: Order Summary -->
+        <!-- Right Column (Sidebar) -->
         <div class="col-lg-4">
-            <div class="sticky-summary">
-                <div class="checkout-card">
-                    <h3 class="h5 mb-4 font-manrope">Resumen del Pedido</h3>
-                    <!-- Item List -->
-                    <div class="mb-4">
-                        <div class="d-flex align-items-center gap-3 mb-3">
-                            <img alt="Supradyn" class="product-img" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDIowumpsP5ZmLX4oHwj_XoUe1RLYUyR0_BoU3f8arBLvoTtsCli9ODRCK-aVB0i7d1mcbUOg9SoSk8LvGXklnD8oxMUYaVrW50HgM7uAY71Q7w4rQU7YhYz0Xm0gdwth3lSHiMmmKI7HQ-hBIxGwjt1SbVBqqF_HeIAerE5riBys0yhF1PsKXg6GjIal6BHXGqw7mgA3YiMaQLIP0DIpsbq-Ss6AaDKHgwysqe0OEBNVKMgz3nm-uL_Q" />
-                            <div class="flex-grow-1">
-                                <div class="fw-bold small">Supradyn Forte x 30 Tab</div>
-                                <div class="text-muted small">Cantidad: 1</div>
-                                <div class="fw-bold small">S/ 45.90</div>
+            <div class="sticky-top" style="top: 100px;">
+                <div class="checkout-card mb-4">
+                    <div class="order-summary-header">
+                        <h3 class="h5 mb-0 fw-bold d-flex align-items-center gap-2">
+                            <i class="fa-solid fa-bag-shopping"></i>
+                            Order Summary
+                        </h3>
+                    </div>
+                    <div class="p-4">
+                        <!-- Items -->
+                        <div class="overflow-y-auto pr-2 scrollbar-thin mb-4" style="max-height: 250px;">
+                            <div class="d-flex gap-3 mb-4">
+                                <div class="flex-shrink-0 bg-light rounded p-1" style="width: 64px; height: 64px;">
+                                    <img alt="Medication" class="img-fluid object-fit-contain mix-blend-multiply h-100" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAB3KI6BpO3Cn_JJjoooaPEJMNyvXFaE6WqCO244qYml73RoayYkLuajsBs-VpWbwolnYGxDWH7VH5Z_S4H4b9WuavkBf-HJR3bRebcJ6e2ALxjBdSJwK-6rz2zYJ-DiLTG6gdb77B_cEaWz7u9Pt-OCWv5Pn3liGdCM78Jn2itaMbCtT_iRM65KFumxv_UOUQR9j8jQ79K-OFQipMjjDsDV7HhiODZ68BGjRpLvz2XbUv9tL3ko_h1kQ" />
+                                </div>
+                                <div class="flex-grow-1">
+                                    <p class="fw-bold small mb-0">Amoxicillin 500mg</p>
+                                    <p class="small text-muted mb-1">Box of 30 caps</p>
+                                    <div class="d-flex justify-content-between">
+                                        <span class="small">Qty: 1</span>
+                                        <span class="fw-bold">$12.50</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="d-flex gap-3 mb-4">
+                                <div class="flex-shrink-0 bg-light rounded p-1" style="width: 64px; height: 64px;">
+                                    <img alt="Thermometer" class="img-fluid object-fit-contain mix-blend-multiply h-100" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCF216smA2LSQ-U9w4-gyDXl9ZHfZP8RARbR0fwLrRWg8cnNfSlMerr3CMaTs7R3xOVfFF_7K01ZkzJRSZwPmCjdSn8EezRda9nkCjYP5-pcMsyLQggdrcBbMMFpamQI17VOr3Y2ix7u1_iLAGSUAlZBiBs2SomlX9fFI1r9JR5htcMpcVEev9Ve-X0gtzWwRhUDzH-igRFDQHj25jg3ioDI5WpVrwRt0MHdBe_2ZZgTLul3g3p8mVrww" />
+                                </div>
+                                <div class="flex-grow-1">
+                                    <p class="fw-bold small mb-0">Infrared Thermometer</p>
+                                    <p class="small text-muted mb-1">Digital Precision</p>
+                                    <div class="d-flex justify-content-between">
+                                        <span class="small">Qty: 1</span>
+                                        <span class="fw-bold">$45.00</span>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        <div class="d-flex align-items-center gap-3">
-                            <img alt="Gel" class="product-img" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAiOKdKdS_kw94YLQg1BiCMEz_IpSOJ5j4_6wKIR5hCa4pxjSxU7UG7um3tUbrUqLppzAlYu80NFdB11szbpbGY-fOTr60xOVM4CkDKdeX6EU1w_UxxPl458BSR7RtEEg_RpHkBZmHnzfwTHCBWId8K-hkNgj_h3_nh04ENiV4CyjWMiPRwof2rZl5cgwBMhyCr4lAiPN1XwwbyA2YLySHOn6yEd7PKvj0v80dZ30ltncj3dnEsB_eEQQ" />
-                            <div class="flex-grow-1">
-                                <div class="fw-bold small">Gel Antibacterial Orgánico</div>
-                                <div class="text-muted small">Cantidad: 2</div>
-                                <div class="fw-bold small">S/ 24.00</div>
+                        <hr class="my-4 text-muted opacity-25" />
+                        <div class="mb-4">
+                            <div class="d-flex justify-content-between mb-2 small">
+                                <span class="text-muted">Subtotal</span>
+                                <span>$57.50</span>
+                            </div>
+                            <div class="d-flex justify-content-between mb-2 small">
+                                <span class="text-muted">Delivery Fee (Express)</span>
+                                <span>$5.90</span>
+                            </div>
+                            <div class="d-flex justify-content-between mb-0 small text-success fw-bold">
+                                <span>Prescription Discount</span>
+                                <span>-$5.00</span>
                             </div>
                         </div>
-                    </div>
-                    <hr class="opacity-10 my-3" />
-                    <div class="small mb-2 d-flex justify-content-between text-muted">
-                        <span>Subtotal</span>
-                        <span>S/ 69.90</span>
-                    </div>
-                    <div class="small mb-2 d-flex justify-content-between text-muted">
-                        <span>Costo de Envío</span>
-                        <span class="text-success fw-bold">Gratis</span>
-                    </div>
-                    <div class="small mb-4 d-flex justify-content-between text-muted">
-                        <span>Descuento Club Farma</span>
-                        <span class="text-danger fw-bold">- S/ 5.00</span>
-                    </div>
-                    <div class="d-flex justify-content-between align-items-center mb-4">
-                        <span class="h5 mb-0 fw-bold font-manrope">Total</span>
-                        <span class="h4 mb-0 fw-bold text-primary-brand font-manrope">S/ 64.90</span>
-                    </div>
-                    <button class="btn btn-primary-brand w-100 py-3 mb-4 shadow-lg">
-                        FINALIZAR COMPRA <i class="fa-solid fa-lock ms-2 small"></i>
-                    </button>
-                    <div class="row g-2">
-                        <div class="col-6">
-                            <div class="d-flex align-items-center gap-1 text-muted" style="font-size: 10px;">
-                                <i class="fa-solid fa-circle-check text-success"></i>
-                                <span>Garantía de Calidad</span>
+                        <hr class="my-4 text-muted opacity-25" />
+                        <div class="d-flex justify-content-between align-items-end pt-2 mb-4">
+                            <div>
+                                <p class="text-uppercase small text-muted mb-1" style="font-size: 10px; font-weight: 600;">Estimated Total</p>
+                                <p class="h2 text-primary fw-bold mb-0">$58.40</p>
+                            </div>
+                            <div class="bg-light p-2 rounded d-flex align-items-center gap-1 text-primary">
+                                <i class="fa-solid fa-circle-check" style="font-size: 14px;"></i>
+                                <span class="fw-bold text-uppercase" style="font-size: 9px; letter-spacing: -0.5px;">Tax Incl.</span>
                             </div>
                         </div>
-                        <div class="col-6">
-                            <div class="d-flex align-items-center gap-1 text-muted" style="font-size: 10px;">
-                                <i class="fa-solid fa-shield-halved text-primary-brand"></i>
-                                <span>Transacción Segura</span>
-                            </div>
-                        </div>
+                        <button class="btn btn-confirm w-100 text-white d-flex align-items-center justify-content-center gap-2 mb-3">
+                            Confirmar pedido
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                        <p class="text-center text-muted mb-0" style="font-size: 11px;">
+                            By clicking Confirm, you agree to our <a class="text-primary text-decoration-underline" href="#">Clinical Terms of Service</a> and Prescription policies.
+                        </p>
                     </div>
                 </div>
-                <div class="d-flex gap-2 p-2 bg-white rounded-3 border">
-                    <input class="form-control form-control-sm border-0 bg-transparent" placeholder="Código de cupón" type="text" />
-                    <button class="btn btn-sm fw-bold text-primary-brand">Aplicar</button>
+                <div class="row g-3">
+                    <div class="col-6">
+                        <div class="checkout-card p-3 text-center mb-0">
+                            <i class="fa-solid fa-shield-halved text-success fs-3 mb-2"></i>
+                            <p class="text-uppercase fw-bold text-muted mb-0" style="font-size: 10px;">Safe Pharma</p>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="checkout-card p-3 text-center mb-0">
+                            <i class="fa-solid fa-headset text-primary fs-3 mb-2"></i>
+                            <p class="text-uppercase fw-bold text-muted mb-0" style="font-size: 10px;">24/7 Pharmacist</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -234,6 +278,4 @@
 </div>
 
 @endsection
-
-
 

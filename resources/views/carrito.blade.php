@@ -131,10 +131,10 @@
                     </div>
                     <p class="mt-2" style="font-size: 10px;">* El costo final incluye impuestos y envío certificado.</p>
                 </div>
-                <button class="btn btn-cta-red w-100 d-flex align-items-center justify-content-center gap-2 mb-4">
+                <a href="{{route('checkout')}}" class="btn btn-cta-red w-100 d-flex align-items-center justify-content-center gap-2 mb-4">
                     Finalizar compra
                     <i class="fa-solid fa-cart-arrow-down"></i>
-                </button>
+                </a>
                 <div class="border-top pt-4">
                     <div class="d-flex align-items-center gap-3 mb-3">
                         <i class="fa-solid fa-shield-halved text-primary fs-5"></i>
