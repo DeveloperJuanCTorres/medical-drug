@@ -1,210 +1,180 @@
 @extends('layouts.app')
 
+
+
 @section('content')
 
-<div class="container-xxl px-4" style="margin-top: 50px; margin-bottom: 80px;">
-    <!-- Title Section -->
-    <div class="mb-4">
-        <h1 class="display-6 mb-1">Mi Carrito de Compras</h1>
-        <p class="text-secondary">Tienes 2 productos seleccionados para tu bienestar.</p>
-    </div>
-    <!-- Free Shipping Progress -->
-    <div class="product-card p-4 mb-4">
-        <div class="d-flex justify-content-between align-items-center mb-3">
-            <div class="d-flex align-items-center gap-3">
-                <i class="fa-solid fa-truck-fast text-success fs-5"></i>
-                <p class="mb-0">¡Te faltan <span class="fw-bold text-primary-custom">S/ 20.00</span> para el Envío Gratis!</p>
-            </div>
-            <span class="small text-secondary">Meta: S/ 100.00</span>
-        </div>
-        <div class="progress">
-            <div aria-valuemax="100" aria-valuemin="0" aria-valuenow="80" class="progress-bar" role="progressbar" style="width: 80%"></div>
-        </div>
-    </div>
-    <!-- Main Grid -->
+<div class="container my-5 py-4">
+    <header class="mb-5">
+        <h1 class="display-6 fw-bold" style="color: var(--primary-color);">Tu Carrito de Compras</h1>
+        <p>Revisa tus productos seleccionados y procede al pago seguro.</p>
+    </header>
     <div class="row g-4">
-        <!-- Product List -->
-        <div class="col-lg-9">
-            <!-- Product 1 -->
-            <div class="product-card p-3 mb-3">
+        <!-- Product List Column -->
+        <div class="col-lg-8">
+            <!-- Desktop Header -->
+            <div class="d-none d-md-grid bg-white p-3 rounded-3 border mb-4 fw-semibold small" style="grid-template-columns: 3fr 1fr 1fr 1fr;">
+                <div>Producto</div>
+                <div class="text-center">Precio</div>
+                <div class="text-center">Cantidad</div>
+                <div class="text-end pe-3">Subtotal</div>
+            </div>
+            <!-- Product Row 1 -->
+            <div class="card border-0 custom-shadow rounded-3 p-4 mb-3">
                 <div class="row align-items-center g-3">
-                    <div class="col-sm-auto">
-                        <div class="bg-light rounded-4 d-flex align-items-center justify-content-center overflow-hidden" style="width: 160px; height: 160px;">
-                            <img alt="Serum" class="img-fluid p-3" src="https://lh3.googleusercontent.com/aida-public/AB6AXuABIW97p08bczemtdrMTR003fG6YevZcBYwPL6HgJWTDNb3Gj62BGj-AI7EHr4s_xWpoaJq56UzvYPZwZg0fPK52DT2K3_0DpdbAmZj811tIzCWqgBV700h4BJUf6_jKyhbO5r78VobXWv1SQome2TqLfkDHiW-2CFpH5gVYuRXpe879z9KLWCJ4tJdcdaxEohEd7zmkm8xmaFrO_xGrJNEsPQ-gtIqCqQV40pm1aHUZhe6oxs8QWnoWA" />
+                    <div class="col-md-6 d-flex align-items-center gap-4">
+                        <div class="product-img-container">
+                            <img alt="Amoxicilina" class="img-fluid" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAxpPeEWLQisX4BLsuvGukcBaBsjjbh0uhci1VtRQIGPrbf00g9QjHr4oIOqAxxVnNYAZLo6N_YZk11I5LO7DMbOf5YNytpKFhhNBuqNuZpGb0FaHyaCvHfY-zIoPXc63fcOiJcMlK4yfR1ZQaMVI0NJp21g_PKZub7g_btnYhY4sKnDMpVPmj4PxVNYCkOqM6WmOCPJhwqCRptYb1t-Oqr6_Zkw8CyOkFtS8e-Ftm9t2GAnDP8OWDLyg" />
+                        </div>
+                        <div>
+                            <h3 class="h6 mb-1 fw-bold">Amoxicilina 500mg</h3>
+                            <p class="small mb-1">Caja de 30 cápsulas • Antibiótico</p>
+                            <span class="text-success small fw-semibold">
+                                <i class="fa-solid fa-circle-check"></i> En Stock
+                            </span>
                         </div>
                     </div>
-                    <div class="col-sm">
-                        <div class="d-md-flex justify-content-between align-items-start h-100">
-                            <div>
-                                <span class="text-success small fw-bold text-uppercase mb-1 d-block" style="letter-spacing: 1px;">La Roche-Posay</span>
-                                <h3 class="h5 mb-1">Hyalu B5 Serum Ácido Hialurónico</h3>
-                                <p class="text-secondary small mb-2">Envase de 30ml • Hidratante reparador</p>
-                                <span class="badge-stock">En stock</span>
-                            </div>
-                            <div class="d-flex flex-column align-items-md-end mt-3 mt-md-0">
-                                <div class="d-flex align-items-center gap-4 mb-2">
-                                    <div class="quantity-selector">
-                                        <button onclick="decrement(this)"><i class="fa-solid fa-minus small"></i></button>
-                                        <input min="1" readonly="" type="number" value="1" />
-                                        <button onclick="increment(this)"><i class="fa-solid fa-plus small"></i></button>
-                                    </div>
-                                    <div class="text-end">
-                                        <div class="h4 mb-0 fw-bold">S/ 45.00</div>
-                                    </div>
-                                </div>
-                                <button class="btn btn-link text-danger text-decoration-none p-0 small fw-bold">
-                                    <i class="fa-solid fa-trash-can me-1"></i> Eliminar
-                                </button>
-                            </div>
+                    <div class="col-6 col-md-2 text-md-center">
+                        <span class="d-md-none small d-block">Precio</span>
+                        <span class="fw-bold" style="color: var(--primary-color);">$12.50</span>
+                    </div>
+                    <div class="col-6 col-md-2 d-flex justify-content-md-center">
+                        <div class="quantity-control">
+                            <button class="minus" type="button">-</button>
+                            <input readonly="" type="number" value="1" />
+                            <button class="plus" type="button">+</button>
                         </div>
+                    </div>
+                    <div class="col-12 col-md-2 d-flex flex-md-column align-items-center align-items-md-end justify-content-between justify-content-md-center">
+                        <div>
+                            <span class="d-md-none small d-block">Subtotal</span>
+                            <span class="fw-bold" style="color: var(--primary-color);">$12.50</span>
+                        </div>
+                        <button class="btn btn-link text-danger p-0 mt-md-2">
+                            <i class="fa-regular fa-trash-can fs-5"></i>
+                        </button>
                     </div>
                 </div>
             </div>
-            <!-- Product 2 -->
-            <div class="product-card p-3 mb-3">
+            <!-- Product Row 2 -->
+            <div class="card border-0 custom-shadow rounded-3 p-4 mb-4">
                 <div class="row align-items-center g-3">
-                    <div class="col-sm-auto">
-                        <div class="bg-light rounded-4 d-flex align-items-center justify-content-center overflow-hidden" style="width: 160px; height: 160px;">
-                            <img alt="Vitamina C" class="img-fluid p-3" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCOroXsSvBgrMYZ6O47cBnYf_YetWPaT0bSnjn3hUg8l7ipv3foI2tbXvs8ilAMpRu9minpX8YxiLGOEcfg38YCm0KAdaWq_6JsbUeSwHb_5Wj8Q83KFNSxuPsbEh8i5zRx52jaYHE6Y4Z_k8zXMuddm30Mcg6uO1t_1RxQPEqUssWp1V2dxVxJPjuJDunqjalnYC6Q-kM5bHwcVLpVwbYcCa1E6tujQvzvys9POYczG45MDJ5dVmlaXQ" />
+                    <div class="col-md-6 d-flex align-items-center gap-4">
+                        <div class="product-img-container">
+                            <img alt="Termómetro" class="img-fluid" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB1l8iQONvn4Al2UpdU0sVrjoiHpOvQyNi1iCP53EkgBN9oe1EaI7scKyLjc2jm1--hgxXPDfCBsFn1XZrQlX0aoaMbV6BgqKDBm3hD6-FDTJHsMG_Eaj9ja2Jp9fju5rXBmYenGuBD11yo8NpCoV2eEX3BGfGRWMbCiacKwbqkQyPiPN7ab_Ldiu5qmVYXqFzV42wZ8Gi9_10AGyqWywlPjUtZYYusZT10XLCNGT432yk8fO6AkStpRQ" />
+                        </div>
+                        <div>
+                            <h3 class="h6 mb-1 fw-bold">Termómetro Infrarrojo</h3>
+                            <p class="small mb-1">Digital sin contacto • Grado Médico</p>
+                            <span class="text-success small fw-semibold">
+                                <i class="fa-solid fa-circle-check"></i> En Stock
+                            </span>
                         </div>
                     </div>
-                    <div class="col-sm">
-                        <div class="d-md-flex justify-content-between align-items-start h-100">
-                            <div>
-                                <span class="text-success small fw-bold text-uppercase mb-1 d-block" style="letter-spacing: 1px;">Nature's Bounty</span>
-                                <h3 class="h5 mb-1">Vitamina C 500mg - 100 Cápsulas</h3>
-                                <p class="text-secondary small mb-2">Suplemento Dietario • Sistema Inmune</p>
-                                <span class="badge-stock">En stock</span>
-                            </div>
-                            <div class="d-flex flex-column align-items-md-end mt-3 mt-md-0">
-                                <div class="d-flex align-items-center gap-4 mb-2">
-                                    <div class="quantity-selector">
-                                        <button onclick="decrement(this)"><i class="fa-solid fa-minus small"></i></button>
-                                        <input min="1" readonly="" type="number" value="1" />
-                                        <button onclick="increment(this)"><i class="fa-solid fa-plus small"></i></button>
-                                    </div>
-                                    <div class="text-end">
-                                        <div class="h4 mb-0 fw-bold">S/ 35.00</div>
-                                    </div>
-                                </div>
-                                <button class="btn btn-link text-danger text-decoration-none p-0 small fw-bold">
-                                    <i class="fa-solid fa-trash-can me-1"></i> Eliminar
-                                </button>
-                            </div>
+                    <div class="col-6 col-md-2 text-md-center">
+                        <span class="d-md-none small d-block">Precio</span>
+                        <span class="fw-bold" style="color: var(--primary-color);">$45.00</span>
+                    </div>
+                    <div class="col-6 col-md-2 d-flex justify-content-md-center">
+                        <div class="quantity-control">
+                            <button class="minus" type="button">-</button>
+                            <input readonly="" type="number" value="1" />
+                            <button class="plus" type="button">+</button>
                         </div>
+                    </div>
+                    <div class="col-12 col-md-2 d-flex flex-md-column align-items-center align-items-md-end justify-content-between justify-content-md-center">
+                        <div>
+                            <span class="d-md-none small d-block">Subtotal</span>
+                            <span class="fw-bold" style="color: var(--primary-color);">$45.00</span>
+                        </div>
+                        <button class="btn btn-link text-danger p-0 mt-md-2">
+                            <i class="fa-regular fa-trash-can fs-5"></i>
+                        </button>
                     </div>
                 </div>
+            </div>
+            <div class="mt-4">
+                <button class="btn btn-link text-primary fw-semibold text-decoration-none p-0 d-flex align-items-center gap-2">
+                    <i class="fa-solid fa-arrow-left"></i> Seguir comprando
+                </button>
             </div>
         </div>
         <!-- Sidebar Summary -->
-        <div class="col-lg-3">
-            <div class="product-card p-4 sticky-summary">
-                <h2 class="h5 mb-4">Resumen de Pedido</h2>
-                <div class="d-flex justify-content-between mb-2">
-                    <span class="text-secondary">Subtotal</span>
-                    <span class="fw-bold">S/ 80.00</span>
+        <aside class="col-lg-4">
+            <div class="card border-0 custom-shadow rounded-4 p-4 sticky-summary">
+                <h2 class="h5 fw-bold mb-4 border-bottom pb-3">Resumen de Compra</h2>
+                <div class="mb-4">
+                    <div class="d-flex justify-content-between mb-2">
+                        <span>Subtotal</span>
+                        <span class="fw-medium">$57.50</span>
+                    </div>
+                    <div class="d-flex justify-content-between mb-2">
+                        <span>Envío Estimado</span>
+                        <span class="text-success fw-medium">Gratis</span>
+                    </div>
+                    <div class="d-flex justify-content-between mb-2">
+                        <span>Impuestos (IVA 12%)</span>
+                        <span class="fw-medium">$6.90</span>
+                    </div>
                 </div>
-                <div class="d-flex justify-content-between mb-2 text-success">
-                    <span>Descuento (FarmaApp)</span>
-                    <span class="fw-bold">- S/ 5.00</span>
+                <div class="mb-4">
+                    <label class="form-label small fw-semibold">¿Tienes un cupón?</label>
+                    <div class="input-group">
+                        <input class="form-control" placeholder="Código" style="background-color: #f9f9ff;" type="text" />
+                        <button class="btn btn-outline-secondary" style="background-color: #345f99; color: white; border: none;" type="button">Aplicar</button>
+                    </div>
                 </div>
-                <div class="d-flex justify-content-between mb-3">
-                    <span class="text-secondary">Envío</span>
-                    <span class="fw-bold">S/ 10.00</span>
+                <div class="border-top pt-4 mb-4">
+                    <div class="d-flex justify-content-between align-items-end">
+                        <span class="h6 mb-1">Total Final</span>
+                        <span class="h2 fw-bold mb-0" style="color: var(--primary-color);">$64.40</span>
+                    </div>
+                    <p class="mt-2" style="font-size: 10px;">* El costo final incluye impuestos y envío certificado.</p>
                 </div>
-                <hr class="my-3" />
-                <div class="d-flex justify-content-between align-items-center mb-4">
-                    <span class="h5 mb-0 fw-bold">Total</span>
-                    <span class="h4 mb-0 fw-bold text-primary-custom">S/ 85.00</span>
-                </div>
-                <div class="d-grid gap-2">
-                    <a href="{{route('checkout')}}" class="btn btn-primary-custom py-3">Finalizar Compra</a>
-                    <a href="{{route('tienda')}}" class="btn btn-outline-primary-custom py-3 d-flex align-items-center justify-content-center gap-2">
-                        <i class="fa-solid fa-plus"></i> Seguir Comprando
-                    </a>
-                </div>
-                <div class="mt-4 p-3 rounded-4 d-flex gap-3 align-items-center" style="background-color: var(--surface-container-low);">
-                    <i class="fa-solid fa-shield-halved text-primary-custom fs-5"></i>
-                    <p class="small text-secondary mb-0">Compra 100% segura con encriptación SSL.</p>
+                <button class="btn btn-cta-red w-100 d-flex align-items-center justify-content-center gap-2 mb-4">
+                    Finalizar compra
+                    <i class="fa-solid fa-cart-arrow-down"></i>
+                </button>
+                <div class="border-top pt-4">
+                    <div class="d-flex align-items-center gap-3 mb-3">
+                        <i class="fa-solid fa-shield-halved text-primary fs-5"></i>
+                        <div style="line-height: 1.2;">
+                            <p class="small fw-bold mb-0">100% Pago Seguro</p>
+                            <span style="font-size: 11px;">Encriptación SSL de 256 bits</span>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-center gap-3 mb-3">
+                        <i class="fa-solid fa-truck text-primary fs-5"></i>
+                        <div style="line-height: 1.2;">
+                            <p class="small fw-bold mb-0">Envío Certificado</p>
+                            <span style="font-size: 11px;">Entrega garantizada en 24-48h</span>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-center gap-3">
+                        <i class="fa-solid fa-notes-medical text-primary fs-5"></i>
+                        <div style="line-height: 1.2;">
+                            <p class="small fw-bold mb-0">Garantía Farmacéutica</p>
+                            <span style="font-size: 11px;">Productos certificados por la FDA</span>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
+        </aside>
     </div>
-    <!-- Recommendations Section -->
-    <section class="mt-5 pt-4">
-        <div class="d-flex justify-content-between align-items-end mb-4">
-            <h2 class="h4 mb-0">Productos recomendados para ti</h2>
-            <a class="text-primary-custom text-decoration-none small fw-bold" href="#">
-                Ver más <i class="fa-solid fa-arrow-right ms-1"></i>
-            </a>
-        </div>
-        <div class="row g-4">
-            <!-- Recommendation 1 -->
-            <div class="col-6 col-md-3">
-                <div class="product-card p-3 h-100">
-                    <div class="bg-light rounded-4 d-flex align-items-center justify-content-center mb-3 overflow-hidden" style="height: 180px;">
-                        <img alt="Sunscreen" class="img-fluid p-2" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBo7VZHlF8WeyJD2_n_iNh6zvtySmwahd_E8bbPUBApElDPMKV5tV8v15F93OeMZkjFsil5TGH3UBh3Z3XqoUQxLb7ICIao3DJq2RMj8wHGJu0ZKV7IBV4hD9pOflwf-YhztmducO1vyHTGxlKko-KKS_htrXjoXLYKjTFWubZFA_EWl-BAdzqQDGz4wsFAEAtJwMoaXnz_rJfTfPc5hCsA_zgIRlJRy5TKHXfK9Ff4nM2T-K-egiW00Q" />
-                    </div>
-                    <span class="text-secondary small d-block mb-1">Eucerin</span>
-                    <h4 class="small fw-bold text-truncate mb-2">Protector Solar Oil Control 50+</h4>
-                    <p class="text-primary-custom fw-bold mb-3">S/ 89.90</p>
-                    <button class="btn btn-outline-primary-custom w-100 py-2 small">Agregar</button>
-                </div>
-            </div>
-            <!-- Recommendation 2 -->
-            <div class="col-6 col-md-3">
-                <div class="product-card p-3 h-100">
-                    <div class="bg-light rounded-4 d-flex align-items-center justify-content-center mb-3 overflow-hidden" style="height: 180px;">
-                        <img alt="Colgate" class="img-fluid p-2" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAs7_l50qqD96vMoRzXZzm43pVVJLh8ZrCEkDztuJYgZrU2sO4rU8ouKOdmFi9XzJ1Gjiwkb71u2vdOHOs8HaYmcpwHV4-8z5YCwzToQfNdeZaeo6wgqb9DXFeAZUyx5RvZ2dNfW1h3P4U--DpWn2yrh2VsOEXusQw9s3uokpSjGxJ6MXn0bbXbBywqZZNRlxt_r-cM2OUvR0lD0SVjc884AmU8ZOA0Fm6b17a9mAIl8VZvCs4HqYDedQ" />
-                    </div>
-                    <span class="text-secondary small d-block mb-1">Colgate</span>
-                    <h4 class="small fw-bold text-truncate mb-2">Pasta Dental Total 12 Pack</h4>
-                    <p class="text-primary-custom fw-bold mb-3">S/ 22.50</p>
-                    <button class="btn btn-outline-primary-custom w-100 py-2 small">Agregar</button>
-                </div>
-            </div>
-            <!-- Recommendation 3 -->
-            <div class="col-6 col-md-3">
-                <div class="product-card p-3 h-100">
-                    <div class="bg-light rounded-4 d-flex align-items-center justify-content-center mb-3 overflow-hidden" style="height: 180px;">
-                        <img alt="Protex" class="img-fluid p-2" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCxLzrQwGlDGiBXCkp0QleuJEFf8v12Q-H13ufmz25hSAjNe2f_VtZNDSJSNK5YRy_z9FDMIQLl3q4gGTscVO8qQ8CaQzMRUdrxzkgOmfPHS6BZhpTdrMZl-onA_FMQKOg_UGBTilzowYKQnrI-A09yj2DvpcQYKCGcz7L59kJ_Sja0asxC3D9Jbi2zES5lA117NiqCDfSL6sZbrz52sLNq5KIMYW_W5hSQxMEqOV9pDeDs1N0C5IEBcw" />
-                    </div>
-                    <span class="text-secondary small d-block mb-1">Protex</span>
-                    <h4 class="small fw-bold text-truncate mb-2">Jabón Líquido Antibacterial</h4>
-                    <p class="text-primary-custom fw-bold mb-3">S/ 12.00</p>
-                    <button class="btn btn-outline-primary-custom w-100 py-2 small">Agregar</button>
-                </div>
-            </div>
-            <!-- Recommendation 4 -->
-            <div class="col-6 col-md-3">
-                <div class="product-card p-3 h-100">
-                    <div class="bg-light rounded-4 d-flex align-items-center justify-content-center mb-3 overflow-hidden" style="height: 180px;">
-                        <img alt="Shampoo" class="img-fluid p-2" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAY8gXRyFizPuBBH3JXCry0rL6Iw5Lo_IMc5CiPF5hx5l3sAbK1GI90qZaEElGu3Xpe3SMIGIhRi9Z8uSyOHN5RShM2kqw4a2lVWpEM4G5x2P4oEN_Bz3nTFMOe8tLjr3sFurfrayry2Sqt6UGV86OmTzGKZUxmYsQjjIKT95SfLh04IZdgRWRNheGlitgpTwv6uYkwYjFrLCT-GhrR_QwPjSRveV-4M6EYnHBol_WRYett6f1uFnX17w" />
-                    </div>
-                    <span class="text-secondary small d-block mb-1">Johnson's Baby</span>
-                    <h4 class="small fw-bold text-truncate mb-2">Shampoo Gotas de Brillo 400ml</h4>
-                    <p class="text-primary-custom fw-bold mb-3">S/ 18.50</p>
-                    <button class="btn btn-outline-primary-custom w-100 py-2 small">Agregar</button>
-                </div>
-            </div>
-        </div>
-    </section>
 </div>
 
-
 <script>
-    function increment(btn) {
-        const input = btn.parentElement.querySelector('input');
-        input.value = parseInt(input.value) + 1;
-    }
-
-    function decrement(btn) {
-        const input = btn.parentElement.querySelector('input');
-        if (parseInt(input.value) > 1) {
-            input.value = parseInt(input.value) - 1;
-        }
-    }
+    // Quantity controls
+    document.querySelectorAll('.quantity-control').forEach(control => {
+        const input = control.querySelector('input');
+        control.querySelector('.minus').addEventListener('click', () => {
+            if (parseInt(input.value) > 1) input.value = parseInt(input.value) - 1;
+        });
+        control.querySelector('.plus').addEventListener('click', () => {
+            input.value = parseInt(input.value) + 1;
+        });
+    });
 </script>
-@endsection
 
+@endsection
 

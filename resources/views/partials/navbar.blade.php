@@ -1,20 +1,13 @@
 <header class="sticky-header d-none d-xl-block">
     <!-- Top Bar -->
-    <div class="top-bar d-none d-lg-block py-2">
-        <div class="container-xxl d-flex justify-content-between align-items-center">
-            <div class="d-flex gap-4">
-                <span><i class="fa-solid fa-truck text-secondary me-1"></i> Delivery Express</span>
-                <span><i class="fa-solid fa-globe text-primary me-1"></i> Envíos a todo el Perú</span>
-                <span><i class="fa-solid fa-user-shield text-secondary me-1"></i> Compra 100% segura</span>
-                <span><i class="fa-solid fa-headset text-primary me-1"></i> Atención 24/7</span>
+    <div class="top-bar d-none d-md-block">
+        <div class="container d-flex justify-content-between">
+            <div>
+                <a class="text-white text-decoration-none me-4" href="#"><i class="fa-solid fa-location-dot me-1"></i> Pharmacy Locations</a>
+                <a class="text-white text-decoration-none" href="#"><i class="fa-solid fa-headset me-1"></i> Contact Pharmacist</a>
             </div>
-            <div class="d-flex gap-3 align-items-center">
-                <a class="text-decoration-none text-muted" href="#"><i class="fa-brands fa-whatsapp me-1"></i> WhatsApp</a>
-                <a class="text-decoration-none text-muted" href="#">Teléfono</a>
-                <a class="text-decoration-none text-muted" href="#">Correo</a>
-                <span class="text-muted opacity-25">|</span>
-                <a class="text-decoration-none text-muted" href="#">Libro de Reclamaciones</a>
-                <a class="text-decoration-none text-muted" href="#">Seguimiento de Pedido</a>
+            <div>
+                <span>Envíos gratis en pedidos mayores a $50</span>
             </div>
         </div>
     </div>
@@ -539,28 +532,3 @@
     </div>
 
 </div>
-
-<!-- Mobile Navigation -->
-<!-- <nav class="mobile-nav d-lg-none">
-    <a class="nav-action-btn text-primary" href="#">
-        <i class="fa-solid fa-house"></i>
-        <span>Inicio</span>
-    </a>
-    <a class="nav-action-btn opacity-50" href="#">
-        <i class="fa-solid fa-magnifying-glass"></i>
-        <span>Explorar</span>
-    </a>
-    <div style="margin-top: -50px;">
-        <button class="btn btn-primary rounded-4 shadow-lg d-flex align-items-center justify-content-center" style="width: 64px; height: 64px;">
-            <i class="fa-solid fa-basket-shopping fs-3"></i>
-        </button>
-    </div>
-    <a class="nav-action-btn opacity-50" href="#">
-        <i class="fa-regular fa-heart"></i>
-        <span>Favoritos</span>
-    </a>
-    <a class="nav-action-btn opacity-50" href="#">
-        <i class="fa-regular fa-user"></i>
-        <span>Perfil</span>
-    </a>
-</nav> -->
