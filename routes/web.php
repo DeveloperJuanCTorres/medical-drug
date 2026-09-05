@@ -4,6 +4,8 @@ use App\Http\Controllers\CartController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\StoreController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\OrderController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,6 +26,16 @@ Route::get('/nosotros', [HomeController::class, 'about'])->name('about');
 Route::get('/tienda', [StoreController::class, 'index'])->name('tienda');
 Route::get('/carrito', [CartController::class, 'index'])->name('cart');
 Route::get('/checkout', [CartController::class, 'checkout'])->name('checkout');
+
+Route::middleware('auth')->group(function () {
+
+    Route::get('/mi-perfil', [ProfileController::class, 'index'])
+        ->name('profile');
+
+    Route::get('/mis-pedidos', [OrderController::class, 'index'])
+        ->name('orders');
+
+});
 
 
 Route::group(['prefix' => 'admin'], function () {

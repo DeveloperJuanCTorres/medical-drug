@@ -165,10 +165,55 @@
                     <i class="fa-solid fa-building"></i>
                     <span>Nosotros</span>
                 </a>
-                <a class="nav-action-btn d-none d-md-flex" href="#">
+                @auth
+                <div class="dropdown d-none d-md-block">
+                    <a class="nav-action-btn dropdown-toggle text-decoration-none"
+                    href="#"
+                    data-bs-toggle="dropdown">
+
+                        <i class="fa-solid fa-circle-user"></i>
+                        <span>{{ Str::limit(Auth::user()->name,8) }}</span>
+                    </a>
+
+                    <ul class="dropdown-menu dropdown-menu-end shadow border-0 rounded-4 mt-2">
+
+                        <li>
+                            <a class="dropdown-item py-2" href="{{ route('profile') }}">
+                                <i class="fa-regular fa-user me-2"></i> Mi Perfil
+                            </a>
+                        </li>
+
+                        <li>
+                            <a class="dropdown-item py-2" href="{{ route('orders') }}">
+                                <i class="fa-solid fa-box me-2"></i> Mis Pedidos
+                            </a>
+                        </li>
+
+                        <li><hr class="dropdown-divider"></li>
+
+                        <li>
+                            <form method="POST" action="{{ route('logout') }}">
+                                @csrf
+                                <button class="dropdown-item text-danger py-2">
+                                    <i class="fa-solid fa-right-from-bracket me-2"></i>
+                                    Cerrar sesión
+                                </button>
+                            </form>
+                        </li>
+
+                    </ul>
+                </div>
+                @else
+                <a class="nav-action-btn d-none d-md-flex"
+                href="#"
+                data-bs-toggle="modal"
+                data-bs-target="#loginModal">
+
                     <i class="fa-regular fa-user"></i>
-                    <span>Mi Perfil</span>
+                    <span>Login</span>
+
                 </a>
+                @endauth
                 <a class="nav-action-btn position-relative bg-light p-2 rounded-3 border" href="#" data-bs-target="#cartOffcanvas" data-bs-toggle="offcanvas">
                     <i class="fa-solid fa-basket-shopping text-primary"></i>
                     <span>Carrito</span>
@@ -283,7 +328,7 @@
 
         <!-- HERO -->
 
-        <div class="mobile-menu-hero">
+        <!-- <div class="mobile-menu-hero">
 
             <div class="hero-avatar">
 
@@ -311,7 +356,7 @@
 
             </div>
 
-        </div>
+        </div> -->
 
         <!-- MENU -->
 
@@ -412,21 +457,37 @@
 
             </a>
 
-            <a href="#" class="menu-link">
+            @auth
+
+            <a href="{{ route('profile') }}" class="menu-link">
 
                 <div>
-
                     <div class="menu-icon">
-
-                        <i class="fa-regular fa-user"></i>
-
+                        <i class="fa-solid fa-circle-user"></i>
                     </div>
 
-                    Mi Perfil
-
+                    {{ Auth::user()->name }}
                 </div>
 
             </a>
+
+            @else
+
+            <button class="menu-link border-0 bg-transparent w-100"
+                    data-bs-toggle="modal"
+                    data-bs-target="#loginModal">
+
+                <div>
+                    <div class="menu-icon">
+                        <i class="fa-regular fa-user"></i>
+                    </div>
+
+                    Login
+                </div>
+
+            </button>
+
+            @endauth
 
             <a href="#"
                 class="menu-link"

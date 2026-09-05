@@ -38,6 +38,131 @@
         @include('partials.cart')
     </div>
 
+    <!-- LOGIN MODAL PREMIUM -->
+    <div class="modal fade login-modal" id="loginModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-sm">
+            <div class="modal-content">
+
+                <!-- Botón cerrar -->
+                <button type="button" class="btn-close login-close" data-bs-dismiss="modal"></button>
+
+                <!-- Header -->
+                <div class="login-header">
+                    <div class="login-logo">
+                        <i class="fa-solid fa-shield-heart"></i>
+                    </div>
+
+                    <h3>Bienvenido</h3>
+                    <p>Inicia sesión para continuar comprando.</p>
+                </div>
+
+                <!-- Body -->
+                <div class="modal-body px-4 pb-4">
+
+                    <form id="loginForm" method="POST" action="{{ route('login') }}">
+                        @csrf
+
+                        <!-- Email -->
+                        <div class="position-relative mb-3">
+                            <i class="fa-regular fa-envelope input-icon"></i>
+
+                            <input
+                                type="email"
+                                name="email"
+                                class="form-control login-input"
+                                placeholder="Correo electrónico"
+                                required>
+                        </div>
+
+                        <!-- Password -->
+                        <div class="position-relative mb-3">
+
+                            <i class="fa-solid fa-lock input-icon"></i>
+
+                            <input
+                                type="password"
+                                name="password"
+                                id="loginPassword"
+                                class="form-control login-input pe-5"
+                                placeholder="Contraseña"
+                                required>
+
+                            <button
+                                type="button"
+                                class="password-toggle"
+                                id="togglePassword">
+
+                                <i class="fa-regular fa-eye"></i>
+
+                            </button>
+
+                        </div>
+
+                        <!-- Recordarme -->
+                        <div class="d-flex justify-content-between align-items-center mb-4">
+
+                            <div class="form-check">
+
+                                <input
+                                    class="form-check-input"
+                                    type="checkbox"
+                                    name="remember"
+                                    id="remember">
+
+                                <label class="form-check-label small" for="remember">
+                                    Recordarme
+                                </label>
+
+                            </div>
+
+                            <a href="{{ route('password.request') }}" class="small text-decoration-none text-primary">
+                                ¿Olvidaste tu contraseña?
+                            </a>
+
+                        </div>
+
+                        <!-- Botón -->
+                        <button class="btn login-btn w-100 text-white">
+                            <i class="fa-solid fa-right-to-bracket me-2"></i>
+                            Iniciar sesión
+                        </button>
+
+                    </form>
+
+                    <div class="login-divider">
+                        <span>o continúa con</span>
+                    </div>
+
+                    <!-- Sociales (opcionales) -->
+                    <!-- <div class="d-flex justify-content-center gap-3 mb-4">
+
+                        <button class="btn social-btn">
+                            <i class="fa-brands fa-google"></i>
+                        </button>
+
+                        <button class="btn social-btn">
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </button>
+
+                        <button class="btn social-btn">
+                            <i class="fa-brands fa-apple"></i>
+                        </button>
+
+                    </div> -->
+
+                    <p class="text-center small mb-0 text-muted">
+                        ¿No tienes cuenta?
+                        <a href="{{ route('register') }}" class="fw-bold text-decoration-none text-primary">
+                            Crear cuenta
+                        </a>
+                    </p>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
    
 
@@ -65,6 +190,72 @@
 
                     if(submenu){
                         submenu.classList.add('active');
+                    }
+
+                });
+
+            });
+
+        });
+    </script>
+
+    <script>
+        $(function(){
+
+            // Mostrar/Ocultar contraseña
+            $('#togglePassword').on('click', function(){
+
+                const input = $('#loginPassword');
+                const icon = $(this).find('i');
+
+                if(input.attr('type') === 'password'){
+                    input.attr('type','text');
+                    icon.removeClass('fa-eye').addClass('fa-eye-slash');
+                }else{
+                    input.attr('type','password');
+                    icon.removeClass('fa-eye-slash').addClass('fa-eye');
+                }
+
+            });
+
+            // Login AJAX
+            $('#loginForm').submit(function(e){
+
+                e.preventDefault();
+
+                const form = $(this);
+
+                $.ajax({
+                    url: form.attr('action'),
+                    method: 'POST',
+                    data: form.serialize(),
+
+                    success:function(){
+
+                        bootstrap.Modal.getInstance(
+                            document.getElementById('loginModal')
+                        ).hide();
+
+                        location.reload();
+
+                    },
+
+                    error:function(xhr){
+
+                        let message='Correo o contraseña incorrectos.';
+
+                        if(xhr.responseJSON?.errors){
+                            message=Object.values(xhr.responseJSON.errors)
+                                .flat()
+                                .join('<br>');
+                        }
+
+                        Swal.fire({
+                            icon:'error',
+                            title:'No se pudo iniciar sesión',
+                            html:message
+                        });
+
                     }
 
                 });
