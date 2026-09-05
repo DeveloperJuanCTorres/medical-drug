@@ -1169,3 +1169,9 @@ input[type="radio"]:checked+.shipping-option {
 .btn-confirm:active {
     transform: scale(0.98);
 }
+
+
+
+.g-5, .gx-5 {
+    --bs-gutter-x: 1rem;
+}
