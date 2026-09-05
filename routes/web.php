@@ -21,6 +21,22 @@ use App\Http\Controllers\OrderController;
 
 Auth::routes();
 
+Route::get('/fix-config', function () {
+
+    try {
+        Artisan::call('config:clear');
+        Artisan::call('cache:clear');
+        Artisan::call('route:clear');
+        Artisan::call('view:clear');
+        Artisan::call('optimize:clear');
+
+        return '✔ Limpieza completada correctamente.';
+    } catch (\Exception $e) {
+        return '❌ Error: ' . $e->getMessage();
+    }
+
+});
+
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/nosotros', [HomeController::class, 'about'])->name('about');
 Route::get('/tienda', [StoreController::class, 'index'])->name('tienda');
